@@ -1,6 +1,7 @@
 {
   "name": "preact-easy-title",
   "version": "0.0.1",
+  "main": "Title.tsx",
   "description": "Easy title for Preact",
   "keywords": [
     "preact-easy-title",
@@ -11,8 +12,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "tsc --jsx preserve -t es2020 --outDir dist --noEmit false & npm run copy",
+    "copy": "cpx -C LICENSE dist&cpx -C README.md dist&cpx -C package.json dist",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "preact": "^10.11.3"
@@ -20,7 +22,8 @@
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",
     "typescript": "^4.9.3",
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "cpx2": "^4.2.0"
   },
   "license": "MIT"
 }
