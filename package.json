@@ -1,0 +1,26 @@
+{
+  "name": "preact-easy-title",
+  "version": "0.0.1",
+  "description": "Easy title for Preact",
+  "keywords": [
+    "preact-easy-title",
+    "preact",
+    "title"
+  ],
+  "author": "ryuapp",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "preact": "^10.11.3"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.4.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
+  },
+  "license": "MIT"
+}
