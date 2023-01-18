@@ -1,7 +1,7 @@
 {
   "name": "preact-easy-title",
   "version": "0.0.1",
-  "main": "Title.tsx",
+  "main": "index.js",
   "description": "Easy title for Preact",
   "keywords": [
     "preact-easy-title",
@@ -12,8 +12,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --jsx preserve -t es2020 --outDir dist --noEmit false & npm run copy",
-    "copy": "cpx -C LICENSE dist&cpx -C README.md dist&cpx -C package.json dist",
+    "build": "tsc --jsx preserve -t es2020 --outDir dist --noEmit false&npm run copy",
+    "copy": "node -e \"require('fs').copyFileSync('dist/components/Title.js', 'index.js')\"",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
@@ -22,8 +22,7 @@
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",
     "typescript": "^4.9.3",
-    "vite": "^4.0.0",
-    "cpx2": "^4.2.0"
+    "vite": "^4.0.0"
   },
   "license": "MIT"
 }

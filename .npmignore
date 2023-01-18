@@ -1,3 +1,5 @@
+.gitattributes
+dist
 node_modules
 src
 public
