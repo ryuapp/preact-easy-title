@@ -1,7 +1,7 @@
 {
   "name": "preact-easy-title",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "index.d.ts",
   "description": "Easy title for Preact",
   "keywords": [
     "preact-easy-title",
@@ -13,7 +13,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --jsx preserve -t es2020 --outDir dist --noEmit false&npm run copy",
-    "copy": "node -e \"require('fs').copyFileSync('dist/components/Title.js', 'index.js')\"",
+    "copy": "npm run copy:js&npm run copy:type",
+    "copy:js": "node -e \"require('fs').copyFileSync('dist/components/Title.js', 'index.js')\"",
+    "copy:type": "node -e \"require('fs').copyFileSync('dist/components/Title.d.ts', 'index.d.ts')\"",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
