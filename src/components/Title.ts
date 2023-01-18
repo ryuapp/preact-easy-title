@@ -1,11 +1,13 @@
 import { ComponentChildren, PreactDOMAttributes } from "preact";
 import { useEffect } from "preact/hooks";
-export function Title({ children }: PreactDOMAttributes) {
+
+export default function Title({ children }: PreactDOMAttributes) {
     useEffect(() => {
         updateTitle(children)
     },[children]);
-    return (<></>)
+    return null
 }
+
 const updateTitle = (children: ComponentChildren) => {
     let newTitle = "";
     if (Array.isArray(children)) {
@@ -15,7 +17,7 @@ const updateTitle = (children: ComponentChildren) => {
     } else {
         newTitle = String(children)
     }
-    if(newTitle != document.title){
+    if(newTitle !== document.title){
         document.title = newTitle;
     }
 }
